@@ -1,0 +1,21 @@
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="card-title mb-4">Player List</h5>
+        <div class="list-group list-group-light">
+            <div class="list-group-item d-flex justify-content-between align-items-center py-1" *ngFor="let gameRecord of gameRecords?.records">
+                <div>
+                    {{gameRecord.user.preferredName}}
+                    <app-game-record-status-badge [recordStatus]="gameRecord.recordStatus"></app-game-record-status-badge>
+                    <span class="badge badge-primary rounded-pill ms-2" *ngIf="gameRecord.admin">Admin</span>
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-outline-success" *ngIf="gameRecords?.admin && gameRecord.recordStatus == RecordStatus.PENDING" (click)="updateRecordStatus(gameRecord.recordId, RecordStatus.JOINED)">Approve</button>
+                    <button class="btn btn-sm btn-outline-danger ms-2" *ngIf="gameRecords?.admin && gameRecord.recordStatus == RecordStatus.JOINED && !gameRecord.admin" (click)="updateRecordStatus(gameRecord.recordId, RecordStatus.KICKED)">Kick</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+
+    </div>
+</div>

@@ -1,0 +1,9 @@
+// PENDING, JOINED, LEFT, KICKED, READY
+
+export enum RecordStatus {
+  PENDING = 'PENDING',
+  JOINED = 'JOINED',
+  LEFT = 'LEFT',
+  KICKED = 'KICKED',
+  READY = 'READY'
+}

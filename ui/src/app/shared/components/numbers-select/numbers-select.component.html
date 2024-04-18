@@ -1,0 +1,3 @@
+<div class="btn-group shadow-0 d-flex flex-wrap" role="group" aria-label="Basic example">
+  <button *ngFor="let num of nums" type="button" mdbRipple [classList]="num == numSelected ? 'btn btn-primary' : 'btn btn-outline-secondary'" (click)="selectNumber(num)">{{num}}</button>
+</div>

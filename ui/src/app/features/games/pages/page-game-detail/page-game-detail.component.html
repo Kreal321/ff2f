@@ -1,0 +1,20 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-10 my-2">
+      <app-game-info-card [game]="game" [gameRecords]="gameRecords"></app-game-info-card>
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-10 my-2">
+      <app-game-record-card [gameRecords]="gameRecords" *ngIf="game?.gameStatus != GameStatus.STARTED"></app-game-record-card>
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-10 my-2" *ngIf="game?.gameType == GameType.AVALON">
+      <app-avalon-detail-card [game]="game"></app-avalon-detail-card>
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-10 my-2" *ngIf="game?.gameType == GameType.FIND_FRIENDS">
+      <app-find-friends-detail-card [game]="game"></app-find-friends-detail-card>
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-10 my-2" *ngIf="game?.gameType == GameType.WEREWOLVES">
+      <app-werewolves-detail-card [game]="game" [gameRecords]="gameRecords"></app-werewolves-detail-card>
+    </div>
+  </div>
+</div>
+

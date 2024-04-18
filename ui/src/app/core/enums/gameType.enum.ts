@@ -1,0 +1,10 @@
+// AVALON, WEREWOLVES, POKER, FIND_FRIENDS, HIKING
+
+export enum GameType {
+    AVALON = "AVALON",
+    WEREWOLVES = "WEREWOLVES",
+    POKER = "POKER",
+    FIND_FRIENDS = "FIND_FRIENDS",
+    HIKING = "HIKING",
+    Others = "Others"
+}

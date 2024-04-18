@@ -1,0 +1,3 @@
+<div class="btn-group shadow-0 d-flex flex-wrap" role="group" aria-label="Basic example">
+  <button *ngFor="let text of texts" type="button" [classList]="text == textSelected ? 'btn btn-primary' : 'btn btn-outline-secondary'" (click)="selectNumber(text)">{{text}}</button>
+</div>

@@ -1,0 +1,22 @@
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="card-title mb-4">Character</h5>
+
+        <div class="mb-3">
+            <div class="form-label">Seat Number</div>
+            <app-numbers-select [nums]="seatNum" [numSelected]="seatNumSelected" (numSelectedChange)="seatNumChange($event)"></app-numbers-select>
+        </div>
+
+        <div class="mb-3">
+            <div class="form-label">Character</div>
+            <app-texts-select [texts]="characters" [textSelected]="characterSelected" (textSelectedChange)="characterChange($event)"></app-texts-select>
+        </div>
+
+        <hr>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <button type="button" class="btn btn-primary" mdbRipple (click)="submit()">Submit</button>
+        </div>
+
+    </div>
+</div>

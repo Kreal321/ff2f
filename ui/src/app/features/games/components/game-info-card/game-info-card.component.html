@@ -1,0 +1,36 @@
+<div class="card shadow">
+  <div class="card-body">
+    <h5 class="card-title mb-4">{{game?.gameName}}</h5>
+<!--    <p class="card-text" *ngIf="rules">{{rules}}</p>-->
+    <div class="d-flex justify-content-between mb-3">
+      <div>
+        <h6 class="card-subtitle mb-2 text-muted">Date</h6>
+        <p class="card-text">{{game?.gameStartTime | date:'mediumDate'}}</p>
+      </div>
+      <div>
+        <h6 class="card-subtitle mb-2 text-muted">Game Num</h6>
+        <p class="card-text">{{game?.gameId}}</p>
+      </div>
+      <div>
+        <h6 class="card-subtitle mb-2 text-muted">Status</h6>
+        <p class="card-text">{{game?.gameStatus}}</p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between mb-3">
+      <div>
+        <h6 class="card-subtitle mb-2 text-muted">Num of Players</h6>
+        <p class="card-text">{{gameRecords?.records?.length}}</p>
+      </div>
+      <div>
+        <h6 class="card-subtitle mb-2 text-muted">Game Type</h6>
+        <p class="card-text">{{game?.gameType}}</p>
+      </div>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-center align-items-center">
+      <button type="button" class="btn btn-primary" mdbRipple *ngIf="game?.gameStatus == GameStatus.DETAIL_CREATED && gameRecords?.myRecordId === 0" (click)="joinGame()">Join</button>
+<!--      <button type="button" class="btn btn-danger" mdbRipple *ngIf="game?.gameStatus == GameStatus.DETAIL_CREATED && !gameRecords?.admin" (click)="leaveGame()">Leave</button>-->
+      <button type="button" class="btn btn-primary" mdbRipple *ngIf="game?.gameStatus == GameStatus.DETAIL_CREATED && gameRecords?.admin" (click)="startGame()">Start</button>
+    </div>
+  </div>
+</div>

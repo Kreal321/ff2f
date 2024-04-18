@@ -1,0 +1,48 @@
+<div class="card shadow">
+  <div class="card-header border-0 px-lg-5 py-sm-5">
+    <div class="text-center mb-4 lh-lg fs-5">
+      Select Game Type
+    </div>
+
+    <div class="mb-3">
+      <div class="form-label">Number of Players</div>
+      <app-numbers-select [nums]="[5,6,7,8,9,10]" [numSelected]="numberOfPlayers" (numSelectedChange)="numberOfPlayersChange($event)"></app-numbers-select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" rows="3" placeholder="Description" [(ngModel)]="selectedGameMode.description"></textarea>
+    </div>
+
+    <hr class="my-4" />
+
+    <div class="mb-3">
+      <label class="form-label">Rules</label>
+      <p>{{selectedGameMode.rules}}</p>
+    </div>
+
+    <div class="d-flex my-3 align-items-center justify-content-between">
+      <button type="button" [classList]="selectedGameMode.containsMerlin ? 'btn btn-success col-5' : 'btn btn-outline-secondary col-5'" (click)="changeSelect(AvalonCharacterType.MERLIN)">Merlin</button>
+      <div>VS</div>
+      <button type="button" [classList]="selectedGameMode.containsAssassin ? 'btn btn-success col-5' : 'btn btn-outline-secondary col-5'" (click)="changeSelect(AvalonCharacterType.ASSASSIN)">Assassin</button>
+    </div>
+
+    <div class="d-flex my-3 align-items-center justify-content-between">
+      <button type="button" [classList]="selectedGameMode.containsPercival ? 'btn btn-success col-5' : 'btn btn-outline-secondary col-5'" (click)="changeSelect(AvalonCharacterType.PERCIVAL)">Percival</button>
+      <div>VS</div>
+      <button type="button" [classList]="selectedGameMode.containsMorgana ? 'btn btn-success col-5' : 'btn btn-outline-secondary col-5'" (click)="changeSelect(AvalonCharacterType.MORGANA)">Morgana</button>
+    </div>
+
+    <div class="d-flex my-3 align-items-center justify-content-between">
+      <button type="button" [classList]="selectedGameMode.containsMordred ? 'btn btn-success col-5' : 'btn btn-outline-secondary col-5'" (click)="changeSelect(AvalonCharacterType.MORDRED)">Mordred</button>
+      <div>OR</div>
+      <button type="button" [classList]="selectedGameMode.containsOberon ? 'btn btn-success col-5' : 'btn btn-outline-secondary col-5'" (click)="changeSelect(AvalonCharacterType.OBERON)">Oberon</button>
+    </div>
+
+    <div class="d-flex justify-content-center mt-5">
+      <button class="btn btn-primary col-12" type="button" mdbRipple (click)="submit()">Finish</button>
+    </div>
+
+  </div>
+  <div class="card-body py-1"></div>
+</div>

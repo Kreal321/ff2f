@@ -1,0 +1,5 @@
+<div class="row">
+    <app-werewolves-detail-create-card class="my-2" [game]="game" (hideCreationCard)="setHideCreationCard($event)" *ngIf="showCreationCard"></app-werewolves-detail-create-card>
+    <app-werewolves-player-list-card class="my-2" [werewolvesGameDetail]="werewolvesGameDetail" *ngIf="game?.gameStatus != GameStatus.PLANING && game?.gameStatus != GameStatus.DETAIL_CREATED"></app-werewolves-player-list-card>
+    <app-werewolves-character-select-card class="my-2" [werewolvesGameDetail]="werewolvesGameDetail" [gameRecords]="gameRecords"></app-werewolves-character-select-card>
+</div>
